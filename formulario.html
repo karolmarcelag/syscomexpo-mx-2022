@@ -1,0 +1,87 @@
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <title>SYSCOMEXPO 2022 - CDMX</title>
+        <link rel="icon" href="https://www.syscom.mx/favico/syscom_favico.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <link href="estilos/estilo.css" rel="stylesheet">
+        <script src="scripts/jquery-3.6.0.js"></script>
+        <script src="scripts/jquery-3.6.0.min.js"></script>
+        <script src="scripts/script.js"></script>
+    </head>
+
+    <body>
+        <div class="logo">
+            <a href='https://expo.syscom.mx'><img src="imagenes/captura.png"></a></div><br>
+        </div>
+        
+        <div class="info" id="info">
+            Por favor complete su información para el registro, debe generar un registro por persona.<br><br>
+            
+            <div class="datos">
+                Nombre (s)<span class="asterisco">*</span><br>
+                <input type="text" id="nombre" maxlength="35"><br>
+                Apellido (s) <span class="asterisco">*</span><br>
+                <input type="text" id="apellido" maxlength="35"><br>
+                Correo <span class="asterisco">*</span><br>
+                <input type="email" id="correo" maxlength="55"><br>
+                ¿Cuál es su cargo en su compañía? <span class="asterisco">*</span><br>
+                <input type="text" id="cargo" maxlength="45"><br>
+                RFC <span class="asterisco">*</span><br>
+                <input type="text" id="rfc" maxlength="20"><br>
+                Empresa (Razón Social) <span class="asterisco">*</span><br>
+                <input type="text" id="empresa" maxlength="255"><br>
+                Su número de cuenta en SYSCOM <span class="asterisco">*</span><br>
+                <input type="number" id="cuenta"><br>
+                Ciudad <span class="asterisco">*</span><br>
+                <input type="text" id="ciudad" maxlength="25"><br>
+                Estado <span class="asterisco">*</span><br>
+                <select id="estado" style='padding:5px;'>
+                    <option value=""></option>
+                    <option value="Aguascalientes">Aguascalientes</option>
+                    <option value="Baja California">Baja California</option>
+                    <option value="Baja California Sur">Baja California Sur</option>
+                    <option value="Campeche">Campeche</option>
+                    <option value="Chiapas">Chiapas</option>
+                    <option value="Chihuahua">Chihuahua</option>
+                    <option value="Ciudad de México">Ciudad de México</option>
+                    <option value="Coahuila">Coahuila</option>
+                    <option value="Colima">Colima</option>
+                    <option value="Durango">Durango</option>
+                    <option value="Estado de México">Estado de México</option>
+                    <option value="Guanajuato">Guanajuato</option>
+                    <option value="Guerrero">Guerrero</option>
+                    <option value="Hidalgo">Hidalgo</option>
+                    <option value="Jalisco">Jalisco</option>
+                    <option value="Michoacán">Michoacán</option>
+                    <option value="Morelos">Morelos</option>
+                    <option value="Nayarit">Nayarit</option>
+                    <option value="Nuevo León">Nuevo León</option>
+                    <option value="Oaxaca">Oaxaca</option>
+                    <option value="Puebla">Puebla</option>
+                    <option value="Querétaro">Querétaro</option>
+                    <option value="Quintana Roo">Quintana Roo</option>
+                    <option value="San Luis Potosí">San Luis Potosí</option>
+                    <option value="Sinaloa">Sinaloa</option>
+                    <option value="Sonora">Sonora</option>
+                    <option value="Tabasco">Tabasco</option>
+                    <option value="Tamaulipas">Tamaulipas</option>
+                    <option value="Tlaxcala">Tlaxcala</option>
+                    <option value="Veracruz">Veracruz</option>
+                    <option value="Yucatán">Yucatán</option>
+                    <option value="Zacatecas">Zacatecas</option>
+                </select>
+                Teléfono de contacto <span class="asterisco">*</span><br>
+                <input type="text" id="telefono" maxlength="15"><br>
+            </div>
+
+            <button id="guardar">Guardar</button>
+            <span id="esperar"></span>
+        </div>
+
+        <span id="imagenQR"></span>
+
+    </body>
+
+</html>

@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Gráficas</title>
+        <link rel="icon" href="https://www.syscom.mx/favico/syscom_favico.png">
+        <link rel="stylesheet" href="estilos/estilo3.css">
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript" src="scripts/jquery-3.6.0.js"></script>
+        <script type="text/javascript" src="scripts/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="scripts/script-graficas.js"></script>
+    </head>
+    <body onload="cargar()">
+        <div class="logo">
+            <a href='https://expo.syscom.mx'><img src="imagenes/captura.png"></a></div><br>
+        </div>
+        <div class="total">
+            Registros: <br><input type="text" id="registros" disabled><br>
+        </div>
+        <div class="primerDia">
+            Asistentes 24 de Mayo: <br><input type="text" id="asistentesUno" disabled><br>
+        </div>
+        <div class="segundoDia">
+                Asistentes 25 de Mayo: <br><input type="text" id="asistentesDos" disabled><br>
+        </div>
+        <div id="chart_div"></div>
+    </body>
+</html>
