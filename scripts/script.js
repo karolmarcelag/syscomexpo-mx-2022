@@ -99,17 +99,19 @@ function registrar_asistencia()
     },
     function(respuesta)
     {
+        console.log(respuesta)
         var datos = JSON.parse(respuesta)
         var nombre = datos[0]["nombre"]
         var apellido = datos[0]["apellido"]
-        var correo = datos[0]["correo"]
         var empresa = datos[0]["empresa"]
+        var cargo = datos[0]["cargo"]
+        var correo = datos[0]["correo"]
         var codigo = "<span style='font-size:40px; text-align:center; margin-top:25px; margin-bottom:63px;'>Gracias " + nombre + " por acompañarnos a SYSCOMExpo 2022 Cd. México</span>"
         $("#leyenda").html(codigo)
         $("#entradaqr").val("")
         autofocus()
 
-        var url = "funciones/pase.php?nombre=" + nombre + "&apellido=" + apellido + "&empresa=" + empresa + "&correo=" + correo;
+        var url = "funciones/pase.php?nombre=" + nombre + "&apellido=" + apellido + "&empresa=" + empresa + "&cargo=" + cargo + "&correo=" + correo;
         window.open(url, '_blank');
     })
 }
@@ -120,12 +122,9 @@ function generarQR()
     {
         nombre: $("#nombre").val(),
         apellido: $("#apellido").val(),
-        correo: $("#correo").val(),
-        cargo: $("#cargo").val(),
         empresa: $("#empresa").val(),
-        pais: $("#pais").val(),
-        estado: $("#estado").val(),
-        ciudad: $("#ciudad").val()
+        cargo: $("#cargo").val(),
+        correo: $("#correo").val()
     },
     function(respuesta)
     {

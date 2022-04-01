@@ -56,8 +56,11 @@
     <body onload="window.print();">
         <!--<img src="fondo.jpg" class="fondo">-->
         <div class="cuadroInfo">
-            <div class="nombre"><?php echo $_GET["nombre"]." ".$_GET["apellido"] ?></div>
+            <div class="nombre"><?php echo $_GET["nombre"] ?></div>
+            <div class="apellido"><?php echo $_GET["apellido"] ?></div>
             <div class="empresa"><?php echo $_GET["empresa"] ?></div>
+            <div class="cargo"><?php echo $_GET["cargo"] ?></div>
+            <div class="nombre"><?php echo $_GET["nombre"] ?></div>
         </div>
     </body>
 </html>

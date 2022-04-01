@@ -16,9 +16,8 @@ $apellido = $arreglo[0]["apellido"];
 $correo = $arreglo[0]["correo"];
 $cargo = $arreglo[0]["cargo"];
 $empresa = $arreglo[0]["empresa"];
-$pais = $arreglo[0]["pais"];
-$estado = $arreglo[0]["estado"];
 $ciudad = $arreglo[0]["ciudad"];
+$estado = $arreglo[0]["estado"];
 
 if($nombre != "")
 {
@@ -30,10 +29,8 @@ $arreglo2 = array();
 $arreglo2[0]["nombre"] = $nombre;
 $arreglo2[0]["apellido"] = $apellido;
 $arreglo2[0]["correo"] = $correo;
+$arreglo2[0]["cargo"] = $cargo;
 $arreglo2[0]["empresa"] = $empresa;
-$arreglo2[0]["pais"] = $pais;
-$arreglo2[0]["estado"] = $estado;
-$arreglo2[0]["ciudad"] = $ciudad;
 
 echo json_encode($arreglo2);
 
