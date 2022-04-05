@@ -9,6 +9,15 @@
         {
             font-family: system-ui;
         }
+        .container
+        {
+            width: 491.33858268px;
+            height: 755.98551181px;
+        }
+        .cuadroInfo
+        {
+            transform: rotate(-90deg);
+        }
         .nombre
         {
             font-size: 27px;
@@ -17,8 +26,8 @@
             top: 0;
             left: 0;
             position: absolute;
-            margin-top: 48%;
-            margin-left: 10%;
+            margin-top: 46%;
+            margin-left: -20%;
             font-weight: bold;
         }
         .apellido, .empresa, .cargo
@@ -29,31 +38,30 @@
             left: 0;
             top: 0;
             position: absolute;
-            margin-left: 10%;
+            margin-left: -20%;
         }
         .apellido
         {
-            margin-top: 59%;
+            margin-top: 54%;
             font-size: 21px;
             font-weight: bold;
         }
         .empresa
         {
-            margin-top: 72%;
+            margin-top: 67%;
         }
         .cargo
         {
-            margin-top: 96%;
+            margin-top: 94%;
             text-align: center;
-            margin-left: 0;
             width: 40%;
         }
         .imagen
         {
-            margin-top: 89%;
+            margin-top: 83%;
             text-align: center;
-            margin-left: 50%;
-            width: 40%;
+            margin-left: 20%;
+            width: 30%;
         }
         .fondo
         {
@@ -77,14 +85,25 @@
     <!--<body onload="window.print(); window.close();">-->
     <body onload="window.print();">
         <!--<img src="fondo.jpg" class="fondo">-->
-        <div class="cuadroInfo">
-            <div class="nombre"><?php echo $_GET["nombre"] ?></div>
-            <div class="apellido"><?php echo $_GET["apellido"] ?></div>
-            <div class="empresa"><?php echo $_GET["empresa"] ?></div>
-            <div class="cargo"><?php echo $_GET["cargo"] ?></div>
-            <?php
-            echo "<img class='imagen' src='../codigos/".$_GET["correo"].".png'>"
-            ?>
+        <div class="container">
+            <div class="cuadroInfo">
+                <div class="nombre"><?php echo $_GET["nombre"] ?></div>
+                <div class="apellido"><?php echo $_GET["apellido"] ?></div>
+                <div class="empresa"><?php echo $_GET["empresa"] ?></div>
+                <div class="cargo"><?php echo $_GET["cargo"] ?></div>
+                <?php
+                echo "<img class='imagen' src='../codigos/".$_GET["correo"].".png'>"
+                ?>
+            </div>
+            <div class="cuadroInfo">
+                <div class="nombre"><?php echo $_GET["nombre"] ?></div>
+                <div class="apellido"><?php echo $_GET["apellido"] ?></div>
+                <div class="empresa"><?php echo $_GET["empresa"] ?></div>
+                <div class="cargo"><?php echo $_GET["cargo"] ?></div>
+                <?php
+                echo "<img class='imagen' src='../codigos/".$_GET["correo"].".png'>"
+                ?>
+            </div>
         </div>
     </body>
 </html>
