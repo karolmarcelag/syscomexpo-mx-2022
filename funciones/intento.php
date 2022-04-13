@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Pase SYSCOMExpo 2022</title>
+        <title>Intento SYSCOMExpo 2022</title>
         <link rel="icon" href="https://www.syscom.mx/favico/syscom_favico.png">
         <meta name="viewport" content="width=device-width, initial-scale=1, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <style>
@@ -12,66 +12,52 @@
         .cuadroInfo
         {
             width: 50%;
-            transform: rotate(-90deg);
-            margin-left: 20%;
-            margin-top: -23%;
-        }
-        .cuadroDos
-        {
-            margin-top: 30%;
+            margin-top: 2%;
+            float: left;
         }
         .nombre
         {
-            font-size: 35px;
-            width: 100%;
             text-align: center;
-            top: 0;
-            left: 0;
-            position: absolute;
-            margin-top: 60%;
-            margin-left: -40%;
+            width: 90%;
+            font-size: 35px;
             font-weight: bold;
+            margin-top: 30%;
         }
         .apellido, .empresa, .cargo
         {
-            font-size: 17px;
-            width: 90%;
             text-align: center;
-            left: 0;
-            top: 0;
-            position: absolute;
-            margin-left: -35%;
+            width: 85%;
         }
         .apellido
         {
-            margin-top: 76%;
             font-size: 25px;
             font-weight: bold;
         }
         .empresa
         {
-            margin-top: 99%;
+            font-size: 17px;
+            margin-top: 5%;
         }
         .cargo
         {
-            margin-top: 146%;
-            margin-left: -53%;
-            text-align: center;
+            float: left;
             width: 40%;
             font-size: 14px;
+            margin-top: 11%;
+            margin-right: 5px;
         }
-        .imagen
+        img
         {
-            margin-top: 140%;
-            text-align: center;
-            margin-left: 40%;
-            width: 40%;
+            width: 25%;
+            float: right;
+            margin-top: 3%;
+            margin-right: 10%;
         }
         </style>
     </head>
 
-    <body onload="window.print(); window.close();">
-    <!--<body onload="window.print();">-->
+    <!--<body onload="window.print(); window.close();">-->
+    <body onload="window.print();">
         <!--<img src="fondo.jpg" class="fondo">-->
         <div class="cuadroInfo">
             <div class="nombre"><?php echo $_GET["nombre"] ?></div>
@@ -83,15 +69,14 @@
             ?>
         </div>
         <div class="cuadroInfo">
-            <div class=cuadroDos>
-                <div class="nombre"><?php echo $_GET["nombre"] ?></div>
-                <div class="apellido"><?php echo $_GET["apellido"] ?></div>
-                <div class="empresa"><?php echo $_GET["empresa"] ?></div>
-                <div class="cargo"><?php echo $_GET["cargo"] ?></div>
-                <?php
-                echo "<img class='imagen' src='../codigos/".$_GET["correo"].".png'>"
-                ?>
-            </div>
+            <div class="nombre"><?php echo $_GET["nombre"] ?></div>
+            <div class="apellido"><?php echo $_GET["apellido"] ?></div>
+            <div class="empresa"><?php echo $_GET["empresa"] ?></div>
+            <div class="cargo"><?php echo $_GET["cargo"] ?></div>
+            <?php
+            echo "<img class='imagen' src='../codigos/".$_GET["correo"].".png'>"
+            ?>
         </div>
     </body>
+
 </html>
