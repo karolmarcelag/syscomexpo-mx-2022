@@ -23,11 +23,45 @@ $(document).ready(function()
             registrar_asistencia()
         }
     })
+    $("#info").keypress(function(e)
+    {
+        if(e.which == 13) 
+        {
+            llamarInfo()
+        }
+    })
     $("#usuarioFinal").click(function(_e)
     {
         checked()
     })
 })
+
+function llamarInfo()
+{
+    $.post("funciones/info.php",
+    {
+        nombre: $("#nombre").val(),
+        apellido: $("#apellido").val(),
+        cuenta: $("#cuenta").val(),
+        empresa: $("#empresa").val(),
+        cargo: $("#cargo").val(),
+        estado: $("#estado").val(),
+        info: $("#info").val()
+    },
+    function(respuesta)
+    {
+        console.log(respuesta)
+        var datos = JSON.parse(respuesta)
+        var nombre = datos[0]["nombre"]
+        var apellido = datos[0]["apellido"]
+        var cuenta = datos[0]["cuenta"]
+        var empresa = datos[0]["empresa"]
+        var cargo = datos[0]["cargo"]
+        var estado = datos[0]["estado"]
+        
+        $("#info").val("")
+    })
+}
 
 function autofocus()
 {
