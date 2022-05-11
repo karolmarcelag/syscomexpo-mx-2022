@@ -23,13 +23,13 @@ $(document).ready(function()
             registrar_asistencia()
         }
     })
-    $("#info").keypress(function(e)
+    /*$("#info").keypress(function(e)
     {
         if(e.which == 13) 
         {
             llamarInfo()
         }
-    })
+    })*/
     $("#usuarioFinal").click(function(_e)
     {
         checked()
@@ -37,6 +37,59 @@ $(document).ready(function()
 })
 
 function llamarInfo()
+{
+    $.post("funciones/info.php",
+    {
+    },
+    function(respuesta)
+    {
+        switch(parseInt(respuesta))
+        {
+            case -1:
+                {
+                    $("#tabla").html("<div style='width:100%; margin-top:15px; '><b>Aún no hay registros</b></div>")
+                }
+                break
+            default:
+                {
+                    var tabla = JSON.parse(respuesta)
+                    tabla_clientes = tabla
+
+                    var codigo = ""+
+                    "<table style='margin-top:15px; width:100%;'>"+
+                        "<tr>"+
+                            "<td class='encabezado'><b>Nombre<b></td>"+
+                            "<td class='encabezado'><b>Apellido<b></td>"+
+                            "<td class='encabezado'><b>No. Cliente<b></td>"+
+                            "<td class='encabezado'><b>Empresa<b></td>"+
+                            "<td class='encabezado'><b>Cargo<b></td>"+
+                            "<td class='encabezado'><b>Estado<b></td>"+
+                            "<td></td>"+
+                            "<td></td>"+
+                        "</tr>"
+                    for(x=0; x<tabla.length; x++)
+                    {
+                        codigo+=
+                        "<tr>"+
+                            "<td>" + tabla[x]["nombre"] + "</td>"+
+                            "<td>" + tabla[x]["apellido"] + "</td>"+
+                            "<td>" + tabla[x]["cuenta"] + "</td>"+
+                            "<td>" + tabla[x]["empresa"] + "</td>"+
+                            "<td>" + tabla[x]["cargo"] + "</td>"+
+                            "<td>" + tabla[x]["estado"] + "</td>"+
+                        "</tr>"
+                    }
+                    codigo+=
+                    "</table>"
+
+                    $("#tabla").html(codigo)
+                }
+                break
+        }
+    })
+}
+
+/*function llamarInfo()
 {
     $.post("funciones/info.php",
     {
@@ -61,7 +114,7 @@ function llamarInfo()
         
         $("#info").val("")
     })
-}
+}*/
 
 function autofocus()
 {

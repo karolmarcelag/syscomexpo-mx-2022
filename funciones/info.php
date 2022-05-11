@@ -2,9 +2,9 @@
 
 include "conexion.php";
 
-$query = "select count(id) as 'registros' from expo.registros2022mx where cuenta like '%$('#cuenta')%'";
-$consulta = mysqli_query($conexion,$query);
-$tabla = mysqli_fetch_array($consulta);
+/*$query1 = "select count(id) as 'registros' from expo.registros2022mx where cuenta like '%$('#cuenta')%'";
+$consulta1 = mysqli_query($conexion,$query1);
+$tabla1 = mysqli_fetch_array($consulta1);
 
 //$arreglo["cantidad"][0]["registros"] = $tabla["cantidadRegistros"];
 
@@ -43,6 +43,35 @@ $arreglo["tabla3"][$x]["fecha"] = $tabla["cantidadFechas"];
 $arreglo["tabla4"][$x]["estado"] = $tabla["cantidadEstados"];
 $arreglo["tabla4"][$x]["datos"] = $tabla["datosTodos"];
 
-echo json_encode($arreglo);
+echo json_encode($arreglo);*/
+
+
+
+$arreglo = array();
+$x = 0;
+
+$query = "select nombre, apellido, cuenta, empresa, cargo, estado from expo.registros2022mx where cuenta like '%$('#cuenta')%'";
+$consulta = mysqli_query($conexion,$query);
+while($tabla = mysqli_fetch_array($consulta))
+{
+    $arreglo[$x]["nombre"] = $tabla["nombre"];
+    $arreglo[$x]["apellido"] = $tabla["apellido"];
+    $arreglo[$x]["cuenta"] = $tabla["cuenta"];
+    $arreglo[$x]["empresa"] = $tabla["empresa"];
+    $arreglo[$x]["cargo"] = $tabla["cargo"];
+    $arreglo[$x]["estado"] = $tabla["estado"];
+    $x++;
+}
+
+if($x>0)
+{
+    echo json_encode($arreglo);
+}
+else
+{
+    echo "-1";
+}
+
+
 
 ?>
