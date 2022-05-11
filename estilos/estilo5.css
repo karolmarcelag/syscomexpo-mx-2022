@@ -1,0 +1,31 @@
+body
+{
+    font-family: system-ui;
+    font-size: 14px;
+}
+
+.tabla
+{
+    width: 1200px;
+    height: 1015px;
+}
+
+.tabla table 
+{
+    text-align: left;
+    
+}
+
+.tabla table thead th
+{
+    padding:2px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(26, 115, 232);
+    font-size: 14px;
+}
+
+.tabla table thead td
+{
+    padding:2px;
+    font-size: 12px;
+}
