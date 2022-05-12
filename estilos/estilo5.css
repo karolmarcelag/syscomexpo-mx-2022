@@ -11,6 +11,7 @@ body
     height: 100%;
     background-color: white;
     margin-left: 10%;
+    overflow-y: scroll;
 }
 
 table
@@ -28,6 +29,7 @@ td, th
     text-align: left;
     border-color: rgb(153, 153, 153);
     padding:2px;
+    border-bottom: 1px solid rgb(153, 153, 153);
 }
 
 .encabezado
@@ -36,37 +38,18 @@ td, th
     color: rgb(255, 255, 255);
     background-color: rgb(26, 115, 232);
     font-size: 14px;
+    width: 16%;
 }
 
-.tarea
+.encabezadoId
 {
-    float: left;
-}
-
-
-
-/*.tabla
-{
-    width: 1200px;
-    height: 1015px;
-}
-
-.tabla table 
-{
-    text-align: left;
-    
-}
-
-.tabla table thead th
-{
-    padding:2px;
     color: rgb(255, 255, 255);
+    width: 4%;
     background-color: rgb(26, 115, 232);
-    font-size: 14px;
 }
 
-.tabla table thead td
+.head
 {
-    padding:2px;
-    font-size: 12px;
-}*/
+    top: 0;
+    position: sticky;
+}

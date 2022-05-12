@@ -50,10 +50,11 @@ echo json_encode($arreglo);*/
 $arreglo = array();
 $x = 0;
 
-$query = "select nombre, apellido, cuenta, empresa, cargo, estado from expo.registros2022mx where cuenta like '%$('#cuenta')%'";
+$query = "select id, nombre, apellido, cuenta, empresa, cargo, estado from expo.registros2022mx";
 $consulta = mysqli_query($conexion,$query);
 while($tabla = mysqli_fetch_array($consulta))
 {
+    $arreglo[$x]["id"] = $tabla["id"];
     $arreglo[$x]["nombre"] = $tabla["nombre"];
     $arreglo[$x]["apellido"] = $tabla["apellido"];
     $arreglo[$x]["cuenta"] = $tabla["cuenta"];

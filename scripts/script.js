@@ -23,13 +23,6 @@ $(document).ready(function()
             registrar_asistencia()
         }
     })
-    /*$("#info").keypress(function(e)
-    {
-        if(e.which == 13) 
-        {
-            llamarInfo()
-        }
-    })*/
     $("#usuarioFinal").click(function(_e)
     {
         checked()
@@ -43,6 +36,7 @@ function llamarInfo()
     },
     function(respuesta)
     {
+        console.log(respuesta)
         switch(parseInt(respuesta))
         {
             case -1:
@@ -56,21 +50,21 @@ function llamarInfo()
                     tabla_clientes = tabla
 
                     var codigo = ""+
-                    "<table style='margin-top:15px; width:100%;'>"+
-                        "<tr>"+
+                    "<table style='width:100%;'>"+
+                        "<tr class='head'>"+
+                            "<td class='encabezadoId'></td>"+
                             "<td class='encabezado'><b>Nombre<b></td>"+
                             "<td class='encabezado'><b>Apellido<b></td>"+
                             "<td class='encabezado'><b>No. Cliente<b></td>"+
                             "<td class='encabezado'><b>Empresa<b></td>"+
                             "<td class='encabezado'><b>Cargo<b></td>"+
                             "<td class='encabezado'><b>Estado<b></td>"+
-                            "<td></td>"+
-                            "<td></td>"+
                         "</tr>"
                     for(x=0; x<tabla.length; x++)
                     {
                         codigo+=
                         "<tr>"+
+                            "<td>" + tabla[x]["id"] + "</td>"+
                             "<td>" + tabla[x]["nombre"] + "</td>"+
                             "<td>" + tabla[x]["apellido"] + "</td>"+
                             "<td>" + tabla[x]["cuenta"] + "</td>"+
@@ -89,32 +83,49 @@ function llamarInfo()
     })
 }
 
-/*function llamarInfo()
+function info1()
 {
-    $.post("funciones/info.php",
+    $.post("funciones/info1.php",
     {
-        nombre: $("#nombre").val(),
-        apellido: $("#apellido").val(),
-        cuenta: $("#cuenta").val(),
-        empresa: $("#empresa").val(),
-        cargo: $("#cargo").val(),
-        estado: $("#estado").val(),
-        info: $("#info").val()
     },
     function(respuesta)
     {
         console.log(respuesta)
-        var datos = JSON.parse(respuesta)
-        var nombre = datos[0]["nombre"]
-        var apellido = datos[0]["apellido"]
-        var cuenta = datos[0]["cuenta"]
-        var empresa = datos[0]["empresa"]
-        var cargo = datos[0]["cargo"]
-        var estado = datos[0]["estado"]
-        
-        $("#info").val("")
+        switch(parseInt(respuesta))
+        {
+            case -1:
+                {
+                    $("#tabla").html("<div style='width:100%; margin-top:15px; '><b>Aún no hay registros</b></div>")
+                }
+                break
+            default:
+                {
+                    var tabla = JSON.parse(respuesta)
+                    tabla_clientes = tabla
+
+                    var codigo = ""+
+                    "<table style='width:100%;'>"+
+                        "<tr class='head'>"+
+                            "<td class='encabezado'><b>No. Cliente<b></td>"+
+                            "<td class='encabezado'><b>Cantidad<b></td>"+
+                        "</tr>"
+                    for(x=0; x<tabla.length; x++)
+                    {
+                        codigo+=
+                        "<tr>"+
+                            "<td>" + tabla[x]["cuenta"] + "</td>"+
+                            "<td>" + tabla[x]["cantidad"] + "</td>"+
+                        "</tr>"
+                    }
+                    codigo+=
+                    "</table>"
+
+                    $("#tabla").html(codigo)
+                }
+                break
+        }
     })
-}*/
+}
 
 function autofocus()
 {
