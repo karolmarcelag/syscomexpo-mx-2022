@@ -7,10 +7,10 @@ body
 
 .contenedor
 {
-    width: 80%;
-    height: 100%;
+    width: 95%;
+    height: 500px;
     background-color: white;
-    margin-left: 10%;
+    margin-left: 2.5%;
     overflow-y: scroll;
 }
 
@@ -20,8 +20,7 @@ table
     font-size: 13px;
     border-color: rgb(153, 153, 153);
     border-collapse: collapse;
-    width: 100%;
-    height: 100%;
+    height: 100px;
 }
 
 td, th
@@ -30,6 +29,7 @@ td, th
     border-color: rgb(153, 153, 153);
     padding:2px;
     border-bottom: 1px solid rgb(153, 153, 153);
+    white-space: nowrap;
 }
 
 .encabezado
@@ -38,13 +38,11 @@ td, th
     color: rgb(255, 255, 255);
     background-color: rgb(26, 115, 232);
     font-size: 14px;
-    width: 16%;
 }
 
 .encabezadoId
 {
     color: rgb(255, 255, 255);
-    width: 4%;
     background-color: rgb(26, 115, 232);
 }
 
