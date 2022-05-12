@@ -29,6 +29,12 @@ $(document).ready(function()
     })
 })
 
+function init()
+{
+    llamarInfo(),
+        info1()
+}
+
 function llamarInfo()
 {
     $.post("funciones/info.php",
