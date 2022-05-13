@@ -14,10 +14,17 @@ body
     background-color: white;
 }
 
+.contenedor0
+{
+    width: 20%;
+    height: 7%;
+    background-color: lightblue;
+}
+
 .contenedor1
 {
     width: 20%;
-    height: 45%;
+    height: 31%;
     background-color: pink;
     overflow-y: scroll;
 }

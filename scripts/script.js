@@ -92,7 +92,7 @@ function llamarInfo()
     })
 }
 
-/*function info0()
+function info0()
 {
     $.post("funciones/info0.php",
     {
@@ -100,41 +100,9 @@ function llamarInfo()
     function(respuesta)
     {
         console.log(respuesta)
-        switch(parseInt(respuesta))
-        {
-            case -1:
-                {
-                    $("#tabla").html("<div style='width:100%; margin-top:15px; '><b>Aún no hay registros</b></div>")
-                }
-                break
-            default:
-                {
-                    var tabla = JSON.parse(respuesta)
-                    tabla_noCliente = tabla
-
-                    var codigo = ""+
-                    "<table style='width:100%;'>"+
-                        "<tr class='head'>"+
-                            "<td class='encabezado'><b>No. Cliente<b></td>"+
-                            "<td class='encabezado'><b>Cantidad<b></td>"+
-                        "</tr>"
-                    for(x=0; x<tabla.length; x++)
-                    {
-                        codigo+=
-                        "<tr>"+
-                            "<td>" + tabla[x]["cuenta"] + "</td>"+
-                            "<td>" + tabla[x]["cantidad"] + "</td>"+
-                        "</tr>"
-                    }
-                    codigo+=
-                    "</table>"
-
-                    $("#tabla").html(codigo)
-                }
-                break
-        }
+        var datos = JSON.parse(respuesta)
     })
-}*/
+}
 
 function info1()
 {
