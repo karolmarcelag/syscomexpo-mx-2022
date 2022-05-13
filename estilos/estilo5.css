@@ -51,8 +51,6 @@ body
     height: 52%;
     background-color: white;
     overflow-y: scroll;
-    scrollbar-width: 10px;
-    
 }
 
 table
