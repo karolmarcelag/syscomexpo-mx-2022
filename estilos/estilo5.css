@@ -5,57 +5,203 @@ body
     background-color: #eee;
 }
 
-.general
+div
+{
+    position: absolute;
+    margin: 0;
+}
+
+#general
+{
+    left: 5%;
+    width: 90%;
+    height: 99%;
+    background-color: white; 
+}
+
+#contenedor0
+{
+    width: 20%;
+    height: 9%;
+    background-color: lightblue;
+}
+
+#contenedor1
+{
+    top: 10%;
+    width: 20%;
+    height: 25%;
+    background-color: pink;
+    overflow-y: scroll;
+}
+
+#contenedor5
+{
+    top: 36%;
+    width: 20%;
+    height: 9%;
+    background-color: lightblue;
+}
+
+#contenedor2
+{
+    left: 20%;
+    width: 20%;
+    height: 45%;
+    background-color: pink;
+    overflow-y: scroll;
+}
+
+#contenedor3
+{
+    left: 40%;
+    width: 20%;
+    height: 45%;
+    background-color: pink;
+    overflow-y: scroll;
+}
+
+#contenedor4
+{
+    left: 60%;
+    width: 40%;
+    height: 45%;
+    background-color: lightblue;
+}
+
+#contenedor
+{
+    top: 46%;
+    width: 100%;
+    height: 54%;
+    background-color: pink;
+    overflow-y: scroll;
+}
+
+table
+{
+    font-size: 13px;
+    border-color: rgb(153, 153, 153);
+    border-collapse: collapse;
+}
+
+td, th
+{
+    padding:2px;
+    border-bottom: 1px solid rgb(153, 153, 153);
+    white-space: nowrap;
+}
+
+.encabezado
+{
+    padding:2px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(26, 115, 232);
+    font-size: 14px;
+}
+
+.encabezadoId
+{
+    background-color: rgb(26, 115, 232);
+}
+
+.head
+{
+    top: 0;
+    position: sticky;
+}
+
+
+
+
+
+/*body
+{
+    font-family: system-ui;
+    font-size: 14px;
+    background-color: #eee;
+}
+
+.general1
+{
+    position: fixed;
+    margin-top: 0%;
+    margin-left: 5%;
+    margin-bottom: 0%;
+    width: 20%;
+    height: 45%;
+    background-color: white;
+}
+
+.general2
 {
     display: flex;
-    margin: auto;
+    position: fixed;
+    margin-top: 0%;
+    margin-left: 25%;
+    width: 70%;
+    height: 45%;
+    background-color: white;
+}
+
+.general3
+{
+    position: fixed;
+    margin-top: 45%;
+    margin-left: 5%;
     width: 90%;
-    height: 100%;
+    height: 55%;
     background-color: white;
 }
 
 .contenedor0
 {
-    width: 20%;
-    height: 7%;
+    width: 100%;
+    height: 20%;
     background-color: lightblue;
 }
 
 .contenedor1
 {
-    width: 20%;
-    height: 31%;
+    width: 100%;
+    height: 60%;
     background-color: pink;
     overflow-y: scroll;
 }
 
+.contenedor5
+{
+    width: 100%;
+    height: 20%;
+    background-color: lightblue;
+}
+
 .contenedor2
 {
-    width: 20%;
-    height: 45%;
+    width: 30%;
+    height: 96%;
     background-color: pink;
     overflow-y: scroll;
 }
 
 .contenedor3
 {
-    width: 20%;
-    height: 45%;
+    width: 30%;
+    height: 96%;
     background-color: pink;
     overflow-y: scroll;
 }
 
 .contenedor4
 {
-    width: 40%;
-    height: 45%;
+    width: 50%;
+    height: 96%;
     background-color: pink;
 }
 
 .contenedor
 {
-    width: 95%;
-    height: 52%;
+    height: 100%;
     background-color: white;
     overflow-y: scroll;
 }
@@ -67,7 +213,6 @@ table
     border-color: rgb(153, 153, 153);
     border-collapse: collapse;
 }
-
 
 td, th
 {
@@ -98,4 +243,4 @@ td, th
 {
     top: 0;
     position: sticky;
-}
+}*/
