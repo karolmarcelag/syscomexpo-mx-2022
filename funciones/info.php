@@ -45,8 +45,6 @@ $arreglo["tabla4"][$x]["datos"] = $tabla["datosTodos"];
 
 echo json_encode($arreglo);*/
 
-
-
 $arreglo = array();
 $x = 0;
 
@@ -72,7 +70,5 @@ else
 {
     echo "-1";
 }
-
-
 
 ?>
