@@ -23,6 +23,13 @@ $(document).ready(function()
             registrar_asistencia()
         }
     })
+    $("#cliente").keypress(function(e)
+    {
+        if(e.which == 13) 
+        {
+            init()
+        }
+    })
     $("#usuarioFinal").click(function(_e)
     {
         checked()
@@ -31,11 +38,11 @@ $(document).ready(function()
 
 function init()
 {
-    llamarInfo(),
-    info0(),
-    info1(),
-    info2(),
-    info3()
+    //llamarInfo()
+    //info0()
+    info1()
+    //info2()
+    //info3()
 }
 
 function llamarInfo()
@@ -108,6 +115,7 @@ function info1()
 {
     $.post("funciones/info1.php",
     {
+        filtro: $("#cliente").val()
     },
     function(respuesta)
     {
@@ -116,7 +124,18 @@ function info1()
         {
             case -1:
                 {
-                    $("#tabla").html("<div style='width:100%; margin-top:15px; '><b>Aún no hay registros</b></div>")
+                    var codigo = ""+
+                    "<table style='width:100%;'>"+
+                        "<tr class='head'>"+
+                            "<td class='encabezado'><b>No. Cliente<b></td>"+
+                            "<td class='encabezado'><b>Cantidad<b></td>"+
+                        "</tr>"+
+                        "<tr>"+
+                            "<td colspan=2 style='text-align:center;'>Aún no hay registros</td>"+
+                        "</tr>"+
+                    "</table>"
+
+                    $("#tabla1").html(codigo)
                 }
                 break
             default:
@@ -141,7 +160,7 @@ function info1()
                     codigo+=
                     "</table>"
 
-                    $("#tabla").html(codigo)
+                    $("#tabla1").html(codigo)
                 }
                 break
         }
@@ -185,7 +204,7 @@ function info2()
                     codigo+=
                     "</table>"
 
-                    $("#tabla").html(codigo)
+                    $("#tabla2").html(codigo)
                 }
                 break
         }
@@ -229,7 +248,7 @@ function info3()
                     codigo+=
                     "</table>"
 
-                    $("#tabla").html(codigo)
+                    $("#tabla3").html(codigo)
                 }
                 break
         }
