@@ -12,16 +12,16 @@ div
     margin: 0;
 }
 
-#general
+.general
 {
-    left: 5%;
-    width: 90%;
+    left: 10%;
+    width: 80%;
     height: 99%;
     background-color: white;
     box-shadow: 0px 0px 5px 1px grey;
 }
 
-#contenedor0
+.contenedor0
 {
     width: 19.5%;
     height: 9%;
@@ -29,16 +29,16 @@ div
     text-align: center;
 }
 
-#contenedor1
+.contenedor1
 {
     top: 10%;
-    width: 20%;
+    width: 19.5%;
     height: 25%;
     background-color: rgb(243, 243, 243);
     overflow-y: scroll;
 }
 
-#contenedor5
+.contenedor5
 {
     top: 36%;
     width: 19.5%;
@@ -47,25 +47,25 @@ div
     text-align: center;
 }
 
-#contenedor2
+.contenedor2
 {
     left: 20%;
-    width: 20%;
+    width: 19.5%;
     height: 45%;
     background-color: rgb(243, 243, 243);
     overflow-y: scroll;
 }
 
-#contenedor3
+.contenedor3
 {
     left: 40%;
-    width: 20%;
+    width: 19.5%;
     height: 45%;
     background-color: rgb(243, 243, 243);
     overflow-y: scroll;
 }
 
-#contenedor4
+.contenedor4
 {
     left: 60%;
     width: 40%;
@@ -73,7 +73,7 @@ div
     background-color: rgb(243, 243, 243);
 }
 
-#contenedor
+.contenedor
 {
     top: 46%;
     width: 100%;
@@ -91,7 +91,7 @@ table
 
 td, th
 {
-    padding:2px;
+    padding:3px;
     border-bottom: 1px solid rgb(153, 153, 153);
     white-space: nowrap;
 }
@@ -122,7 +122,17 @@ span
 
 input
 {
+    margin: auto;
     display: block;
     border: none;
     border-bottom: 1px solid rgb(153, 153, 153);
+    background-color: rgb(243, 243, 243);
+    outline: none;
+}
+
+div.cantidad
+{
+    width: 100%;
+    top: 45%;
+    font-size: 30px;
 }

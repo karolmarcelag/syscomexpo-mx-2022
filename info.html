@@ -6,33 +6,34 @@
         <link rel="icon" href="https://www.syscom.mx/favico/syscom_favico.png">
         <meta name="viewport" content="width=device-width, initial-scale=1, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <link href="estilos/estilo5.css" rel="stylesheet">
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <script src="scripts/jquery-3.6.0.js"></script>
         <script src="scripts/jquery-3.6.0.min.js"></script>
         <script src="scripts/script.js"></script>
     </head>
 
     <body onload="init()">
-        <div id="general">
-            <div class="contenedor0" id="contenedor0">
-                <span id="registros">No. Registros</span>
+        <div class="general">
+            <div class="contenedor0">
+                <br><span class="numero">No. Registros</span>
+                <span id="cantidad"></span>
             </div>
-            <div class="contenedor1" id="contenedor1">
+            <div class="contenedor1">
                 <span id="tabla1"></span>
             </div>
-            <div class="contenedor5" id="contenedor5">
-                <span>No. Cliente</span>
-                <input id="cliente" type="text" placeholder="Introduzca un valor">
+            <div class="contenedor5">
+                <br><span id="noCliente">No. Cliente</span><br><br>
+                <input id="cliente" type="number" placeholder="Introduzca un valor">
             </div>
-            <div class="contenedor2" id="contenedor2">
+            <div class="contenedor2">
                 <span id="tabla2"></span>
             </div>
-            <div class="contenedor3" id="contenedor3">
+            <div class="contenedor3">
                 <span id="tabla3"></span>
             </div>
-            <div class="contenedor4" id="contenedor4">
-                <span id="mapa"></span>
+            <div id="donutchart" class="contenedor4">
             </div>
-            <div class="contenedor" id="contenedor">
+            <div class="contenedor">
                 <span id="tabla"></span>
             </div>
         </div>    

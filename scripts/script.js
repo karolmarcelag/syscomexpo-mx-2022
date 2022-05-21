@@ -38,26 +38,44 @@ $(document).ready(function()
 
 function init()
 {
-    //llamarInfo()
-    //info0()
+    llamarInfo()
+    info0()
     info1()
-    //info2()
-    //info3()
+    info2()
+    info3()
+    info4()
+    /*iniciar()*/
 }
 
 function llamarInfo()
 {
     $.post("funciones/info.php",
     {
+        filtro: $("#cliente").val()
     },
     function(respuesta)
     {
-        console.log(respuesta)
         switch(parseInt(respuesta))
         {
             case -1:
                 {
-                    $("#tabla").html("<div style='width:100%; margin-top:15px; '><b>Aún no hay registros</b></div>")
+                    var codigo = ""+
+                    "<table style='width:100%;'>"+
+                        "<tr class='head'>"+
+                            "<td class='encabezadoId'></td>"+
+                            "<td class='encabezado'><b>Nombre<b></td>"+
+                            "<td class='encabezado'><b>Apellido<b></td>"+
+                            "<td class='encabezado'><b>No. Cliente<b></td>"+
+                            "<td class='encabezado'><b>Empresa<b></td>"+
+                            "<td class='encabezado'><b>Cargo<b></td>"+
+                            "<td class='encabezado'><b>Estado<b></td>"+
+                        "</tr>"+
+                        "<tr>"+
+                            "<td colspan=7 style='text-align:center;'>No hay datos</td>"+
+                        "</tr>"+
+                    "</table>"
+
+                    $("#tabla").html(codigo)
                 }
                 break
             default:
@@ -103,11 +121,11 @@ function info0()
 {
     $.post("funciones/info0.php",
     {
+        filtro: $("#cliente").val()
     },
     function(respuesta)
     {
-        console.log(respuesta)
-        var datos = JSON.parse(respuesta)
+        $("#cantidad").html("<div class='cantidad'>" + respuesta + "</div>")
     })
 }
 
@@ -119,7 +137,6 @@ function info1()
     },
     function(respuesta)
     {
-        console.log(respuesta)
         switch(parseInt(respuesta))
         {
             case -1:
@@ -131,7 +148,7 @@ function info1()
                             "<td class='encabezado'><b>Cantidad<b></td>"+
                         "</tr>"+
                         "<tr>"+
-                            "<td colspan=2 style='text-align:center;'>Aún no hay registros</td>"+
+                            "<td colspan=2 style='text-align:center;'>No hay datos</td>"+
                         "</tr>"+
                     "</table>"
 
@@ -171,15 +188,26 @@ function info2()
 {
     $.post("funciones/info2.php",
     {
+        filtro: $("#cliente").val()
     },
     function(respuesta)
     {
-        console.log(respuesta)
         switch(parseInt(respuesta))
         {
             case -1:
                 {
-                    $("#tabla").html("<div style='width:100%; margin-top:15px; '><b>Aún no hay registros</b></div>")
+                    var codigo = ""+
+                    "<table style='width:100%;'>"+
+                        "<tr class='head'>"+
+                            "<td class='encabezado'><b>Fecha<b></td>"+
+                            "<td class='encabezado'><b>Cantidad<b></td>"+
+                        "</tr>"+
+                        "<tr>"+
+                            "<td colspan=2 style='text-align:center;'>No hay datos</td>"+
+                        "</tr>"+
+                    "</table>"
+
+                    $("#tabla2").html(codigo)
                 }
                 break
             default:
@@ -215,26 +243,36 @@ function info3()
 {
     $.post("funciones/info3.php",
     {
+        filtro: $("#cliente").val()
     },
     function(respuesta)
     {
-        console.log(respuesta)
         switch(parseInt(respuesta))
         {
             case -1:
                 {
-                    $("#tabla").html("<div style='width:100%; margin-top:15px; '><b>Aún no hay registros</b></div>")
+                    var codigo = ""+
+                    "<table style='width:100%;'>"+
+                        "<tr class='head'>"+
+                            "<td class='encabezado'><b>Estado<b></td>"+
+                            "<td class='encabezado'><b>Cantidad<b></td>"+
+                        "</tr>"+
+                        "<tr>"+
+                            "<td colspan=2 style='text-align:center;'>No hay datos</td>"+
+                        "</tr>"+
+                    "</table>"
+
+                    $("#tabla3").html(codigo)
                 }
                 break
             default:
                 {
                     var tabla = JSON.parse(respuesta)
                     tabla_estado = tabla
-
                     var codigo = ""+
                     "<table style='width:100%;'>"+
                         "<tr class='head'>"+
-                            "<td class='encabezado'><b>No. Cliente<b></td>"+
+                            "<td class='encabezado'><b>Estado<b></td>"+
                             "<td class='encabezado'><b>Cantidad<b></td>"+
                         "</tr>"
                     for(x=0; x<tabla.length; x++)
@@ -247,11 +285,50 @@ function info3()
                     }
                     codigo+=
                     "</table>"
-
                     $("#tabla3").html(codigo)
                 }
                 break
         }
+    })
+}
+
+function info4()
+{
+    google.charts.load('current', {'packages':['corechart'], });
+    google.charts.setOnLoadCallback(info4_2);
+}
+
+function info4_2()
+{
+    $.post("funciones/info3.php", 
+    {
+        filtro: $("#cliente").val()
+    },
+
+    function(respuesta)
+    {
+        var tabla = JSON.parse(respuesta)
+
+        var options =  {
+            title: 'Registros',
+            pieHole: 0.4,
+        };
+        
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Estado')
+        data.addColumn('number', 'Cantidad')
+
+        for (var x=0; x<tabla.length; x++)
+        {
+            var estado = tabla[x]["estado"]
+            var cantidad = parseInt(tabla[x]["cantidad"])
+            data.addRows([
+                [estado, cantidad]
+            ])
+        }
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
     })
 }
 
@@ -325,7 +402,6 @@ function registrar_asistencia()
     },
     function(respuesta)
     {
-        console.log(respuesta)
         var datos = JSON.parse(respuesta)
         var nombre = datos[0]["nombre"]
         var apellido = datos[0]["apellido"]

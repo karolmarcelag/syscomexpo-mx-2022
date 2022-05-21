@@ -4,8 +4,9 @@ include "conexion.php";
 
 $arreglo = array();
 $x = 0;
+$filtro = $_POST["filtro"];
 
-$query = "select estado, count(estado) as 'cantidad' from expo.registros2022mx group by estado order by count(estado) desc";
+$query = "select estado, count(estado) as 'cantidad' from expo.registros2022mx where cuenta like '%$filtro%' group by estado order by count(estado) desc";
 $consulta = mysqli_query($conexion,$query);
 while($tabla = mysqli_fetch_array($consulta))
 {

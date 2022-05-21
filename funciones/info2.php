@@ -4,8 +4,9 @@ include "conexion.php";
 
 $arreglo = array();
 $x = 0;
+$filtro = $_POST["filtro"];
 
-$query = "select fecha, count(fecha) as 'cantidad' from expo.registros2022mx group by fecha order by str_to_date(fecha, '%d-%m-%Y') desc";
+$query = "select fecha, count(fecha) as 'cantidad' from expo.registros2022mx where cuenta like '%$filtro%' group by fecha order by str_to_date(fecha, '%d-%m-%Y') desc";
 $consulta = mysqli_query($conexion,$query);
 while($tabla = mysqli_fetch_array($consulta))
 {

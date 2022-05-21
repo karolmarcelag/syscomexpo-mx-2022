@@ -47,8 +47,9 @@ echo json_encode($arreglo);*/
 
 $arreglo = array();
 $x = 0;
+$filtro = $_POST["filtro"];
 
-$query = "select id, nombre, apellido, cuenta, empresa, cargo, estado from expo.registros2022mx";
+$query = "select id, nombre, apellido, cuenta, empresa, cargo, estado from expo.registros2022mx where cuenta like '%$filtro%'";
 $consulta = mysqli_query($conexion,$query);
 while($tabla = mysqli_fetch_array($consulta))
 {
